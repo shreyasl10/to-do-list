@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 	$date = isset($_POST['date']) ? mysqli_real_escape_string($conn, $_POST['date']) : "";
 	$priority = isset($_POST['priority']) ? mysqli_real_escape_string($conn, $_POST['priority']) : "";
 	// Insert data into database
-	$sql = "INSERT INTO `my_to_do_db`.`my_to_do_tb` (`task`, `date`, `priority`) VALUES ('$task', '$date', '$priority');";
+	$sql = "INSERT INTO `workindia`.`to_do` (`task`, `date`, `priority`) VALUES ('$task', '$date', '$priority');";
 	$post_data_query = mysqli_query($conn, $sql);
 	if($post_data_query){
 		$json = array("status" => 1, "Success" => "To-Do has been added successfully!");
